@@ -3,10 +3,6 @@ body{
     width: 100%;
 }
 
-.main-wrapper {
-    height: 100vh;  
-}
-
 #sidebar {
     padding: 30%;
     background-color: rgb(53, 49, 49);
