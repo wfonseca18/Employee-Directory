@@ -11,103 +11,66 @@
 </head>
 
 <body>
-  <!-- Sidebar -->
-  <div class="row" style="width: 100%;">
-    <div class="col-2">
-      <nav id="sidebar">
-        <ul class="list-unstyled components">
-          <li>
-            <a id="view" href="#">VIEW</a>
-          </li>
-          <li>
-            <a id="add" href="#">ADD</a>
-          </li>
-          <li>
-            <a id="verify" href="#">VERIFY</a>
-          </li>
-          <li>
-            <a id="update" href="#">UPDATE</a>
-          </li>
-          <li>
-            <a id="delete" href="#">DELETE</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
+  <div class="main-wrapper">
+    <!-- Sidebar -->
+    <div class="row" style="width: 100%;">
+      <div class="col-2">
+        <nav id="sidebar">
+          <ul class="list-unstyled components">
+            <li>
+              <a id="view" class="active" href="#">VIEW</a>
+            </li>
+            <li>
+              <a id="add" href="#">ADD</a>
+            </li>
+            <li>
+              <a id="verify" href="#">VERIFY</a>
+            </li>
+            <li>
+              <a id="update" href="#">UPDATE</a>
+            </li>
+            <li>
+              <a id="delete" href="#">DELETE</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
 
-    <div class="col-8 border border-dark">
-      <div class="pane" id="viewPane" style="display: none"></div>
-      <div class="pane" id="addPane" style="display: none">
-        <form action="javascript:submitEmp();">
-          <p>
-            <label for="addEmpName">Name</label>
-            <input name="addEmpName" type="text" required />
-          </p>
-          <p>
-            <label for="addEmpOfficeNum">Office Number</label>
-            <input name="addEmpOfficeNum" type="text" required />
-          </p>
-          <p>
-            <label for="addEmpPhoneNum">Phone Number</label>
-            <input name="addEmpPhoneNum" type="text" required />
-          </p>
-          <p>
+      <div class="col-8 border border-dark">
+        <div class="pane m-3" id="viewPane" style="display: none"></div>
+        <div class="pane m-3" id="addPane" style="display: none">
+          <form action="javascript:submitEmp();">
+            <input name="addEmpName" placeholder="Name" type="text" required />
+            <input name="addEmpOfficeNum" placeholder="Office Number" type="text" required />
+            <input name="addEmpPhoneNum" placeholder="Phone Number" type="text" required />
             <button id="addBtn" type="submit">Add</button>
-          </p>
-        </form>
-      </div>
-      <div class="pane" id="verifyPane" style="display: none">
-        <form action="javascript:verifyEmp();">
-          <p>
-            <label for="verifyEmpName">Name</label>
-            <input name="verifyEmpName" type="text" required />
-          </p>
-          <p>
-            <button id="verifyBtn" type="submit">Verify</button>
-          </p>
-        </form>
-        <h2 id="verifyAnswer" style="display: 'none';"></h2>
-      </div>
+          </form>
+        </div>
+        <div class="pane m-3" id="verifyPane" style="display: none">
+          <form action="javascript:verifyEmp();">
+              <input name="verifyEmpName" placeholder="Name" type="text" required />
+              <button id="verifyBtn" type="submit">Verify</button>
+          </form>
+          <h2 id="verifyAnswer" style="display: 'none';"></h2>
+        </div>
 
-      <div class="pane" id="updatePane" style="display: none">
-        <form action="javascript:updateEmp();">
-          <p>
-            <label for="updateEmpName">Name</label>
-            <input name="updateEmpName" type="text" required />
-          </p>
-          <p>
-            <label for="updateEmpOfficeNum">Office Number</label>
-            <input name="updateEmpOfficeNum" type="text" required />
-          </p>
-          <p>
-            <label for="updateEmpPhoneNum">Phone Number</label>
-            <input name="updateEmpPhoneNum" type="text" required />
-          </p>
-          <p>
+        <div class="pane m-3" id="updatePane" style="display: none">
+          <form action="javascript:updateEmp();">
+            <input name="updateEmpName" placeholder="Name" type="text" required />
+            <input name="updateEmpOfficeNum" placeholder="Office Number" type="text" required />
+            <input name="updateEmpPhoneNum" placeholder="Phone Number" type="text" required />
             <button id="updateBtn" type="submit">Update</button>
-          </p>
-        </form>
-      </div>
+          </form>
+        </div>
 
-      <div class="pane" id="deletePane" style="display: none">
-        <form action="javascript:deleteEmp();">
-          <p>
-            <label for="deleteEmpName">Name</label>
-            <input name="deleteEmpName" type="text" required />
-          </p>
-          <p>
-            <button id="deleteBtn" type="submit">Delete</button>
-          </p>
-        </form>
+        <div class="pane m-3" id="deletePane" style="display: none">
+          <form action="javascript:deleteEmp();">
+              <input name="deleteEmpName" placeholder="Name" type="text" required />
+              <button id="deleteBtn" type="submit">Delete</button>
+          </form>
+        </div>
       </div>
     </div>
-    <!-- <footer class="footer">
-      <div class="container">
-        <span class="text-muted">Copyright &copy;</span>
-      </div>
-    </footer> -->
-
-
 
     <script src="dom.js"></script>
     <script src="employeeList.js"></script>

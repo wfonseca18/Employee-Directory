@@ -25,9 +25,10 @@ const showView = function () {
     // Sets up the view pane
     $('#viewPane').empty();
     for (let i = 0; i < employeeList.length; i++) {
-        $('#viewPane').append(`<p>${employeeList[i].name}</p>`);
-        $('#viewPane').append(`<p>${employeeList[i].officeNum}</p>`);
-        $('#viewPane').append(`<p>${employeeList[i].phoneNum}</p>`);
+        $('#viewPane').append(`<div class="record border border-dark m-3" id="record-${i}"></div>`);
+        $(`#record-${i}`).append(`<p>Name: ${employeeList[i].name}</p>`);
+        $(`#record-${i}`).append(`<p>Office Phone: ${employeeList[i].officeNum}</p>`);
+        $(`#record-${i}`).append(`<p>Phone Number: ${employeeList[i].phoneNum}</p>`);
     }
 }
 
@@ -102,8 +103,28 @@ const deleteEmp = function () {
 
 showView();
 
-$('#view').on('click', showView);
-$('#add').on('click', showAdd);
-$('#verify').on('click', showVerify);
-$('#update').on('click', showUpdate);
-$('#delete').on('click', showDelete);
+$('#view').on('click', function (){
+    showView();
+    $('a').removeClass('active');
+    $('#view').addClass('active');
+});
+$('#add').on('click', function(){
+    showAdd();
+    $('a').removeClass('active');
+    $('#add').addClass('active');
+});
+$('#verify').on('click', function (){
+    showVerify();
+    $('a').removeClass('active');
+    $('#verify').addClass('active');
+});
+$('#update').on('click', function (){
+    showUpdate();
+    $('a').removeClass('active');
+    $('#update').addClass('active');
+});
+$('#delete').on('click', function(){
+    showDelete();
+    $('a').removeClass('active');
+    $('#delete').addClass('active');
+});
